@@ -12,6 +12,14 @@
  */
 const sumElements = arr => {
   /* your logic here...*/
+  return arr.reduce(function(sum,item){
+    if(isFinite(parseFloat(item)) && !isNaN(parseFloat(item))){
+      if(item.toString().split(".").length>=2 || item.toString().split("e").length>=2)
+        return sum+parseFloat(item);  
+      else return sum+parseInt(item);    
+    }
+    else return sum;
+  },0);
 };
 
 export default sumElements;

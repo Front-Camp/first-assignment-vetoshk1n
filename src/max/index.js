@@ -8,6 +8,10 @@
 */
 const max = arr => {
   /* your logic here...*/
+  return arr.reduce(function(max,item){
+    if(!isNaN(item) && isFinite(item)) return Math.max(item,max);
+    else return max;
+  },-Infinity);
 };
 
 export default max;
